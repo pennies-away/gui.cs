@@ -314,7 +314,7 @@ namespace Terminal.Gui {
 			}
 
 			if (e.Key == Key.CursorDown && search.HasFocus) { // jump to list
-				if (searchset.Count > 0) {
+				if (isShow && searchset.Count > 0) {
 					listview.TabStop = true;
 					listview.SetFocus ();
 					SetValue (searchset [listview.SelectedItem]);
