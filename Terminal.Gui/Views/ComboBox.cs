@@ -487,7 +487,7 @@ namespace Terminal.Gui {
 				ResetSearchSet (noCopy: true);
 
 				foreach (var item in source.ToList ()) { // Iterate to preserver object type and force deep copy
-					if (item.ToString ().StartsWith (search.Text.ToString (), StringComparison.CurrentCultureIgnoreCase)) {
+					if (ReadOnly || item.ToString ().StartsWith (search.Text.ToString (), StringComparison.CurrentCultureIgnoreCase)) {
 						searchset.Add (item);
 					}
 				}
