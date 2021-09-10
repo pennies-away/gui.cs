@@ -2122,7 +2122,6 @@ namespace Terminal.Gui {
 			// Dispatch the command.
 			switch (kb.Key) {
 			case Key.PageDown:
-			case Key.V | Key.CtrlMask:
 			case Key.PageDown | Key.ShiftMask:
 				if (kb.Key.HasFlag (Key.ShiftMask)) {
 					StartSelecting ();
@@ -2370,6 +2369,7 @@ namespace Terminal.Gui {
 				lastWasKill = setLastWasKill;
 				break;
 
+			case Key.V | Key.CtrlMask:
 			case Key.Y | Key.CtrlMask: // Control-y, yank
 				if (isReadOnly)
 					break;
