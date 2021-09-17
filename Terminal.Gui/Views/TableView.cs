@@ -120,7 +120,7 @@ namespace Terminal.Gui {
 				var oldValue = selectedColumn;
 
 				//try to prevent this being set to an out of bounds column
-				selectedColumn = Table == null ? 0 : Math.Min (Table.Columns.Count - 1, Math.Max (0, value));
+				selectedColumn = Table == null ? 0 : Math.Min (Table.Columns.Count - 1, Math.Max (-1, value));
 
 				if (oldValue != selectedColumn)
 					OnSelectedCellChanged (new SelectedCellChangedEventArgs (Table, oldValue, SelectedColumn, SelectedRow, SelectedRow));
@@ -136,7 +136,7 @@ namespace Terminal.Gui {
 
 				var oldValue = selectedRow;
 
-				selectedRow = Table == null ? 0 : Math.Min (Table.Rows.Count - 1, Math.Max (0, value));
+				selectedRow = Table == null ? 0 : Math.Min (Table.Rows.Count - 1, Math.Max (-1, value));
 
 				if (oldValue != selectedRow)
 					OnSelectedCellChanged (new SelectedCellChangedEventArgs (Table, SelectedColumn, SelectedColumn, oldValue, selectedRow));
