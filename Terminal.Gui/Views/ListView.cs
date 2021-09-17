@@ -631,6 +631,17 @@ namespace Terminal.Gui {
 		private bool allowsMultipleSelection = true;
 
 		/// <summary>
+		/// Ensures SelectedItem is a valid value for the current source.
+		/// </summary>
+		public void EnsureValidSelection()
+		{
+			int validSelect = Source == null ? 0 : Math.Max (0, Math.Min (Source.Count, SelectedItem));
+			if(validSelect != SelectedItem) {
+				SelectedItem = validSelect;
+			}
+		}
+
+		/// <summary>
 		/// Invokes the SelectedChanged event if it is defined.
 		/// </summary>
 		/// <returns></returns>
