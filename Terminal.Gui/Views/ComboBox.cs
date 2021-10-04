@@ -295,8 +295,18 @@ namespace Terminal.Gui {
 		///<inheritdoc/>
 		public override bool ProcessKey (KeyEvent e)
 		{
-			if (e.Key == Key.Enter && listview.SelectedItem > -1) {
-				Selected ();
+			if (e.Key == Key.Enter) {
+				if (isShow) {
+					if (listview.SelectedItem > -1) {
+						Selected ();
+					}
+				} else {
+					SetSearchSet ();
+					isShow = true;
+					ShowList ();
+					FocusSelectedItem ();
+				}
+				
 				return true;
 			}
 
