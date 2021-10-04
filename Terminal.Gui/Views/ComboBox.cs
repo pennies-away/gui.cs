@@ -519,6 +519,12 @@ namespace Terminal.Gui {
 			this.SuperView?.BringSubviewToFront (this);
 		}
 
+		public void HideList_HACK()
+		{
+			isShow = false;
+			HideList ();
+		}
+
 		/// <summary>
 		/// Hide the search list
 		/// </summary>
