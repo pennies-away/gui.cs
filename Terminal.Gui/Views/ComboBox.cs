@@ -519,6 +519,13 @@ namespace Terminal.Gui {
 			this.SuperView?.BringSubviewToFront (this);
 		}
 
+		/// <summary>
+		/// Hides the search list
+		/// </summary>
+		/// <remarks>
+		/// When setting the text of a combo box it remains open after setting. 
+		/// This method allows you to hide the list from the outside.
+		/// </remarks>
 		public void HideList_HACK()
 		{
 			isShow = false;
