@@ -697,6 +697,8 @@ namespace Terminal.Gui {
 
 			shortcutHelper = new ShortcutHelper ();
 
+			oldEnabled = Enabled;
+
 			CanFocus = false;
 			TabIndex = -1;
 			TabStop = false;
