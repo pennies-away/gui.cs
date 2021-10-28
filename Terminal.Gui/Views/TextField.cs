@@ -576,7 +576,7 @@ namespace Terminal.Gui {
 					return false;
 
 				if (ReadOnly)
-					return true;
+					return false;
 
 				if (length > 0) {
 					DeleteSelectedText ();
